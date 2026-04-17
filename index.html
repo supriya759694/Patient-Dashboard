@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+        <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+   <header class="header"><!-- top nav -->
+
+<div class="logo">
+  <img src="/assets/TestLogo.svg" alt="logo" />
+</div>
+
+<nav class="nav">
+    <a href="#" class="nav-link">Overview</a>
+    <a href="#" class="nav-link">Patients</a>
+    <a href="#" class="nav-link">Schedule</a>
+    <a href="#" class="nav-link">Message</a>
+    <a href="#" class="nav-link">Transactions</a>
+
+</nav>
+
+
+<div class="header-right">
+    <img src="/assets/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png" alt="Doctor-pic" class="doctor-pic" />
+<div>
+    <p class="doctor-name">Dr. Jose Simmons</p>
+    <p class="doctor-role">General Practitioner</p>
+</div>
+<img src="/assets/settings_FILL0_wght300_GRAD0_opsz24.svg" alt="setting-icon" class="setting-icon"/>
+<img src="/assets/more_vert_FILL0_wght300_GRAD0_opsz24.svg" alt="colon-icon" class="colon-icon"/>
+</div>
+   </header>
+
+     <!-- ========== MAIN LAYOUT ========== -->
+   <div class="app-layout">
+
+        <!-- ========== LEFT PANEL ========== -->
+    <aside class="left-panel">
+<div class="panel-header">
+    <h2>Patients</h2>
+    <img src="/assets/search_FILL0_wght300_GRAD0_opsz24.svg" alt="search-icon" class="search-icon">
+</div>
+<!-- patient items injected here by JS -->
+      <div id="patient-list"></div>
+    </aside>  
+
+
+        <!-- ========== CENTER PANEL ========== -->
+    <main class="center-panel"><!-- center content -->
+ <div class="chart-card">
+    <h2>Diagnosis History</h2>
+    <div class="chart-top">
+        <h3>Blood Pressure</h3>
+        <select name="month-filter" id="month-filter">
+            <<option>Last 6 Months</<option>
+            <span class="trend-up">
+                <img src="/assets/ArrowDown.svg" alt="arrow-down" class="trend-icon" />
+            </span>
+        </select>
+    </div>
+
+    <div class="chart-area">
+        <canvas id="bpChart"></canvas>
+
+        <div class="bp-values">
+
+            <div class="bp-item">
+                <div class="bp-dot systolic-dot"></div>
+                <p class="bp-label">Systolic</p>
+                <h2 id="sys-value">--</h2>
+                <p id="sys-level">--</p>
+                
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="bp-item">
+                <div class="bp-dot diastolic-dot"></div>
+                <p class="bp-label">Diastolic</p>
+                <h2 id="dia-value">--</h2>
+                <p id="dia-level">--</p>
+            </div>
+
+
+        </div>
+    </div>
+ </div>
+
+
+       <!-- Vitals Cards -->
+<div class="vitals-row">
+    <div class="vital-card" id="card-heartrate">
+
+        <img src="/assets/HeartBPM.svg" alt="heart-rate" />
+        <p class="vital-label">Heart Rate</p>
+        <h2 class="vital-value">
+            <span id="heart-rate">--</span>
+            <span class="vital-unit">bbm</span>
+        </h2>
+        
+     <p class="vital-level" id="heart-rate-level">--</p>
+    </div>
+</div>
+    </main>
+
+
+    <aside class="patient-detail"><!-- right panel --></aside>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
