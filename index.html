@@ -12,6 +12,7 @@
 
 <body>
 
+<div class="container">
     <!-- ========== HEADER ========== -->
    <header class="header"><!-- top nav -->
 
@@ -20,11 +21,29 @@
 </div>
 
 <nav class="nav">
-    <a href="#" class="nav-link">Overview</a>
+    <span>
+        <img src="/assets/home_FILL0_wght300_GRAD0_opsz24.svg" alt="overview" />
+        <a href="#" class="nav-link">Overview</a>
+    </span>
+    
+    <span id="patients-link">
+    <img src="/assets/group_FILL0_wght300_GRAD0_opsz24.svg" alt="patients" />
     <a href="#" class="nav-link">Patients</a>
+    </span>
+    <span>
+    <img src="/assets/calendar_today_FILL0_wght300_GRAD0_opsz24.svg" alt="schedule" />
     <a href="#" class="nav-link">Schedule</a>
+    </span>
+
+    <span>
+    <img src="/assets/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg" alt="message" />
     <a href="#" class="nav-link">Message</a>
-    <a href="#" class="nav-link">Transactions</a>
+    </span>
+
+    <span>
+        <img src="/assets/credit_card_FILL0_wght300_GRAD0_opsz24.svg" alt="transactions" />
+        <a href="#" class="nav-link">Transactions</a>
+    </span>
 
 </nav>
 
@@ -35,10 +54,11 @@
     <p class="doctor-name">Dr. Jose Simmons</p>
     <p class="doctor-role">General Practitioner</p>
 </div>
+<div class="header-divider"></div>  <!-- ADD THIS -->
 <img src="/assets/settings_FILL0_wght300_GRAD0_opsz24.svg" alt="setting-icon" class="setting-icon"/>
 <img src="/assets/more_vert_FILL0_wght300_GRAD0_opsz24.svg" alt="colon-icon" class="colon-icon"/>
 </div>
-   </header>
+  </header>
 
      <!-- ========== MAIN LAYOUT ========== -->
    <div class="app-layout">
@@ -58,10 +78,11 @@
     <main class="center-panel"><!-- center content -->
  <div class="chart-card">
     <h2>Diagnosis History</h2>
+    <div class="chart">
     <div class="chart-top">
         <h3>Blood Pressure</h3>
         <select name="month-filter" id="month-filter">
-            <<option>Last 6 Months</<option>
+            <option>Last 6 Months</<option>
             <span class="trend-up">
                 <img src="/assets/ArrowDown.svg" alt="arrow-down" class="trend-icon" />
             </span>
@@ -70,12 +91,14 @@
 
     <div class="chart-area">
         <canvas id="bpChart"></canvas>
-
+ <div class="bp-divider"></div>
         <div class="bp-values">
 
             <div class="bp-item">
+                <div class="bp-dot-row">
                 <div class="bp-dot systolic-dot"></div>
                 <p class="bp-label">Systolic</p>
+                </div>
                 <h2 id="sys-value">--</h2>
                 <p id="sys-level">--</p>
                 
@@ -84,20 +107,41 @@
             <div class="divider"></div>
 
             <div class="bp-item">
+                <div class="bp-dot-row">
                 <div class="bp-dot diastolic-dot"></div>
                 <p class="bp-label">Diastolic</p>
+                </div>
                 <h2 id="dia-value">--</h2>
                 <p id="dia-level">--</p>
             </div>
-
-
         </div>
     </div>
- </div>
+    </div>
+</div>
 
 
        <!-- Vitals Cards -->
 <div class="vitals-row">
+    <div class="vital-card" id="card-respiratory">
+        <img src="/assets/respiratory rate.svg" alt="respiratory" />
+        <p class="vital-label">Respiratory Rate</p>
+        <h2 class="vital-value">
+            <span id="respiratory-rate">--</span>
+            <span class="vital-unit">bpm</span>
+        </h2>
+        <p class="vital-level" id="respiratory-level">--</p>
+    </div>
+
+    <div class="vital-card" id="card-temperature">
+        <img src="/assets/Temperature.svg" alt="temperature" />
+        <p class="vital-label">Temperature</p>
+        <h2 class="vital-value">
+            <span id="temperature">--</span>
+            <span class="vital-unit">°F</span>
+        </h2>
+        <p class="vital-level" id="temperature-level">--</p>
+    </div>
+    
     <div class="vital-card" id="card-heartrate">
 
         <img src="/assets/HeartBPM.svg" alt="heart-rate" />
@@ -109,12 +153,105 @@
         
      <p class="vital-level" id="heart-rate-level">--</p>
     </div>
+
+    
+
+    
+</div>
+
+      <!-- Diagnostic List -->
+<div class="diagnostic-card">
+    <h3>Diagnostic List</h3>
+    <table class="diagnostic-table">
+        <thead>
+            <tr>
+               <th>Problem / Diagnosis</th>
+              <th>Description</th>
+              <th>Status</th> 
+            </tr>
+        </thead>
+
+        <tbody id="diagnostic-tbody">
+            <!-- rows injected by JS -->
+        </tbody>
+
+    </table>
 </div>
     </main>
 
+    <!-- ========== RIGHT PANEL ========== -->
+<aside class="right-panel">
 
-    <aside class="patient-detail"><!-- right panel --></aside>
+    <!--Profile-->
+    <div class="profile-card">
+        <img  id="profile-img" src="" alt="profile picture" />
+        <h2 id="profile-name">--</h2>
+    </div>
+          <!-- Patient Info -->
+<div class="patient-info">
+    <div class="info-row">
+        <span class="info-icon">
+            <img src="/assets/calendar_today_FILL0_wght300_GRAD0_opsz24.svg" alt="calender" />
+        </span>
+        <div>
+            <p class="info-lebel">Date of Birth</p>
+            <p class="info-value" id="dob">--</p>
+        </div>
+    </div>
+
+    <div class="info-row">
+        <span class="info-icon">
+            <img src="/assets/FemaleIcon.svg" alt="calender" />
+        </span>
+        <div>
+            <p class="info-lebel">Gender</p>
+            <p class="info-value" id="gender">--</p>
+        </div>
+    </div>
+
+
+    <div class="info-row">
+        <span class="info-icon">
+            <img src="/assets/PhoneIcon.svg" alt="phone" />
+        </span>
+        <div>
+            <p class="info-lebel">Contact Info</p>
+            <p class="info-value" id="phone">--</p>
+        </div>
+    </div>
+
+    <div class="info-row">
+        <span class="info-icon">
+            <img src="/assets/PhoneIcon.svg" alt="Contact"  />
+        </span>
+        <div>
+            <p class="info-lebel">Emergency Contact</p>
+            <p class="info-value" id="emergency-contact">--</p>
+        </div>
+    </div>
+
+    <div class="info-row">
+        <span class="info-icon">
+            <img src="/assets/InsuranceIcon.svg" alt="calender" />
+        </span>
+        <div>
+            <p class="info-lebel">Insurance Provider</p>
+            <p class="info-value" id="insurance-provider">--</p>
+        </div>
+    </div>
+</div>
+
+<button class="show-all">Show All Information</button>
+
+<div class="lab-section">
+        <h3>Lab Results</h3>
+        <ul id="lab-list">
+          <!-- items injected by JS -->
+        </ul>
+</div>
+</aside>
+  </div>
   </div>
 <script src="script.js"></script>
 </body>
-</html>
+</html> 

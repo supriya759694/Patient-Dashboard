@@ -1,5 +1,891 @@
+/* ─────────────────────────────────
+   GOOGLE FONTS
+───────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
+
+
+/* ─────────────────────────────────
+   XD DESIGN TOKENS — EXACT FROM INSTRUCTOR
+───────────────────────────────── */
+:root {
+
+  /* Colors */
+  --unnamed-color-705aaa: #705AAA;
+  --unnamed-color-cbc8d4: #CBC8D4;
+  --activestate_bg_2:     #D8FCF7;
+  --activestate_bg_1:     #01F0D0;
+  --unnamed-color-0bd984: #0BD984;
+  --unnamed-color-072635: #072635;
+  --unnamed-color-0c3d5d: #0C3D5D;
+  --unnamed-color-084c77: #084C77;
+  --unnamed-color-055a92: #055A92;
+  --unnamed-color-006aac: #006AAC;
+  --unnamed-color-007bc7: #007BC7;
+  --unnamed-color-707070: #707070;
+  --unnamed-color-f6f6f6: #F6F6F6;
+  --unnamed-color-ededed: #EDEDED;
+  --unnamed-color-000000: #000000;
+  --unnamed-color-878787: #878787;
+  --unnamed-color-ffffff: #FFFFFF;
+  --unnamed-color-ff6200: #FF6200;
+
+  /* Font/text values */
+  --unnamed-font-family-manrope:       Manrope;
+  --unnamed-font-style-normal:         normal;
+  --unnamed-font-weight-800:           800;
+  --unnamed-font-weight-normal:        400;
+  --unnamed-font-weight-bold:          700;
+  --unnamed-font-size-14:              14px;
+  --unnamed-font-size-18:              18px;
+  --unnamed-font-size-24:              24px;
+  --unnamed-character-spacing-0:       0px;
+  --unnamed-line-spacing-19:           19px;
+  --unnamed-line-spacing-24:           24px;
+  --unnamed-line-spacing-33:           33px;
+  --unnamed-text-transform-titlecase:  capitalize;
+
+  /* Layout helpers */
+  --header-height:   72px;
+  --border-radius:   16px;
+  --card-shadow:     0 4px 20px rgba(7, 38, 53, 0.08);
+  --page-padding:    16px;
+  --gap:             16px;
+}
+
+
+/* ─────────────────────────────────
+   XD CHARACTER STYLE CLASSES
+   (exactly as instructor provided)
+───────────────────────────────── */
+.card-title-24pt {
+  font-family:     var(--unnamed-font-family-manrope);
+  font-style:      var(--unnamed-font-style-normal);
+  font-weight:     var(--unnamed-font-weight-800);
+  font-size:       var(--unnamed-font-size-24);
+  line-height:     var(--unnamed-line-spacing-33);
+  letter-spacing:  var(--unnamed-character-spacing-0);
+  color:           var(--unnamed-color-072635);
+}
+
+.inner-card-title-18pt {
+  font-family:     var(--unnamed-font-family-manrope);
+  font-style:      var(--unnamed-font-style-normal);
+  font-weight:     var(--unnamed-font-weight-bold);
+  font-size:       var(--unnamed-font-size-18);
+  line-height:     var(--unnamed-line-spacing-24);
+  letter-spacing:  var(--unnamed-character-spacing-0);
+  color:           var(--unnamed-color-072635);
+  text-transform:  var(--unnamed-text-transform-titlecase);
+}
+
+.body-emphasized-14pt {
+  font-family:     var(--unnamed-font-family-manrope);
+  font-style:      var(--unnamed-font-style-normal);
+  font-weight:     var(--unnamed-font-weight-bold);
+  font-size:       var(--unnamed-font-size-14);
+  line-height:     var(--unnamed-line-spacing-19);
+  letter-spacing:  var(--unnamed-character-spacing-0);
+  color:           var(--unnamed-color-072635);
+}
+
+.body-secondary-info-14pt {
+  font-family:     var(--unnamed-font-family-manrope);
+  font-style:      var(--unnamed-font-style-normal);
+  font-weight:     var(--unnamed-font-weight-normal);
+  font-size:       var(--unnamed-font-size-14);
+  line-height:     var(--unnamed-line-spacing-19);
+  letter-spacing:  var(--unnamed-character-spacing-0);
+  color:           var(--unnamed-color-707070);
+}
+
+.body-regular-14 {
+  font-family:     var(--unnamed-font-family-manrope);
+  font-style:      var(--unnamed-font-style-normal);
+  font-weight:     var(--unnamed-font-weight-normal);
+  font-size:       var(--unnamed-font-size-14);
+  line-height:     var(--unnamed-line-spacing-19);
+  letter-spacing:  var(--unnamed-character-spacing-0);
+  color:           var(--unnamed-color-072635);
+}
+
+
+/* ─────────────────────────────────
+   RESET
+───────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img { display: block; }
+a   { text-decoration: none; color: inherit; }
+
+
+/* ─────────────────────────────────
+   BODY
+───────────────────────────────── */
+body {
+  font-family:  var(--unnamed-font-family-manrope), sans-serif;
+  font-style:   var(--unnamed-font-style-normal);
+  background:   var(--unnamed-color-f6f6f6);
+  color:        var(--unnamed-color-072635);
+  font-size:    var(--unnamed-font-size-14);
+  min-height:   100vh;
+  padding:      var(--page-padding);
+  display:      flex;
+  flex-direction: column;
+  gap:          var(--gap);
+  overflow-x:   hidden;
+}
+
+
+/* ─────────────────────────────────
+   HEADER — floating rounded pill
+───────────────────────────────── */
+.header {
+  width:            100%;
+  height:           var(--header-height);
+  background:       var(--unnamed-color-ffffff);
+  border-radius:    70px;
+  box-shadow:       var(--card-shadow);
+  display:          flex;
+  align-items:      center;
+  justify-content:  space-between;
+  padding:          0 28px;
+  flex-shrink:      0;
+  margin-bottom:    var(--gap);
+}
+
+/* Logo */
+.logo {
+  display:      flex;
+  align-items:  center;
+  flex-shrink:  0;
+}
+
+.logo img {
+  height: 38px;
+  width:  auto;
+}
+
+/* ── Navigation ── */
+.nav {
+  display:      flex;
+  align-items:  center;
+  gap:          4px;
+}
+
+.nav span {
+  display:       flex;
+  align-items:   center;
+  gap:           8px;
+  padding:       10px 18px;
+  border-radius: 41px;
+  cursor:        pointer;
+  transition:    background 0.2s ease;
+  white-space:   nowrap;
+}
+
+.nav span:hover {
+  background: var(--unnamed-color-f6f6f6);
+}
+
+/* Active nav — teal pill */
+.nav span.active {
+  background: var(--activestate_bg_1);
+}
+
+.nav span img {
+  width:       18px;
+  height:      18px;
+  flex-shrink: 0;
+}
+
+.nav-link {
+  font-family:  var(--unnamed-font-family-manrope);
+  font-size:    var(--unnamed-font-size-14);
+  font-weight:  var(--unnamed-font-weight-bold);
+  line-height:  var(--unnamed-line-spacing-19);
+  color:        var(--unnamed-color-072635);
+}
+
+#patients-link {
+  top: 34px;
+left: 601px;
+width: 122px;
+height: 41px;
+background: var(--activestate_bg_1) 0% 0% no-repeat padding-box;
+background: #01F0D0 0% 0% no-repeat padding-box;
+border-radius: 41px;
+opacity: 1;
+}
+/* ── Header Right ── */
+.header-right {
+  display:     flex;
+  align-items: center;
+  gap:         12px;
+  flex-shrink: 0;
+}
+
+.doctor-pic {
+  width:        44px;
+  height:       44px;
+  border-radius: 50%;
+  object-fit:   cover;
+  flex-shrink:  0;
+}
+
+.doctor-name {
+  font-family:  var(--unnamed-font-family-manrope);
+  font-size:    var(--unnamed-font-size-14);
+  font-weight:  var(--unnamed-font-weight-bold);
+  line-height:  var(--unnamed-line-spacing-19);
+  color:        var(--unnamed-color-072635);
+}
+
+.doctor-role {
+  font-family:  var(--unnamed-font-family-manrope);
+  font-size:    12px;
+  font-weight:  var(--unnamed-font-weight-normal);
+  color:        var(--unnamed-color-707070);
+  margin-top:   2px;
+}
+
+/* Thin vertical divider */
+.header-divider {
+  width:       1px;
+  height:      32px;
+  background:  var(--unnamed-color-ededed);
+  flex-shrink: 0;
+}
+
+.setting-icon,
+.colon-icon {
+  width:      20px;
+  height:     20px;
+  cursor:     pointer;
+  opacity:    0.6;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.setting-icon:hover,
+.colon-icon:hover {
+  opacity: 1;
+}
+
+
+/* ─────────────────────────────────
+   MAIN LAYOUT — 3 columns
+───────────────────────────────── */
 .app-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr 300px;
-    height: calc(100vh - 70px);
+  display:               grid;
+  grid-template-columns: 260px 1fr 300px;
+  gap:                   var(--gap);
+  height:                calc(100vh - var(--header-height) - 48px);
+  min-height:            0;
+}
+
+
+/* ─────────────────────────────────
+   LEFT PANEL
+───────────────────────────────── */
+.left-panel {
+  background:    var(--unnamed-color-ffffff);
+  border-radius: var(--border-radius);
+  box-shadow:    var(--card-shadow);
+  overflow-y:    auto;
+  display:       flex;
+  flex-direction: column;
+  min-height:    0;
+}
+
+.panel-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         20px 16px 16px;
+  border-bottom:   1px solid var(--unnamed-color-ededed);
+  position:        sticky;
+  top:             0;
+  background:      var(--unnamed-color-ffffff);
+  border-radius:   var(--border-radius) var(--border-radius) 0 0;
+  z-index:         5;
+}
+
+.panel-header h2 {
+  font-family:  var(--unnamed-font-family-manrope);
+  font-size:    var(--unnamed-font-size-24);
+  font-weight:  var(--unnamed-font-weight-800);
+  line-height:  var(--unnamed-line-spacing-33);
+  color:        var(--unnamed-color-072635);
+}
+
+.search-icon {
+  width:      20px;
+  height:     20px;
+  cursor:     pointer;
+  opacity:    0.5;
+  transition: opacity 0.2s;
+}
+
+.search-icon:hover { opacity: 1; }
+
+/* Patient Items */
+.patient-item {
+  display:       flex;
+  align-items:   center;
+  gap:           12px;
+  padding:       12px 16px;
+  cursor:        pointer;
+  border-bottom: 1px solid var(--unnamed-color-ededed);
+  transition:    background 0.15s;
+}
+
+.patient-item:last-child {
+  border-bottom: none;
+}
+
+.patient-item:hover {
+  background: var(--unnamed-color-f6f6f6);
+}
+
+/* Active patient — light teal */
+.patient-item.active {
+  background: var(--activestate_bg_2);
+}
+
+.patient-thumb {
+  width:         48px;
+  height:        48px;
+  border-radius: 50%;
+  object-fit:    cover;
+  flex-shrink:   0;
+}
+
+.patient-info-text {
+  flex:      1;
+  min-width: 0;
+}
+
+.patient-name {
+  font-family:   var(--unnamed-font-family-manrope);
+  font-size:     var(--unnamed-font-size-14);
+  font-weight:   var(--unnamed-font-weight-bold);
+  line-height:   var(--unnamed-line-spacing-19);
+  color:         var(--unnamed-color-072635);
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+}
+
+.patient-meta {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size:   13px;
+  font-weight: var(--unnamed-font-weight-normal);
+  color:       var(--unnamed-color-707070);
+  margin-top:  2px;
+}
+
+.more-icon {
+  font-size:   20px;
+  color:       var(--unnamed-color-707070);
+  flex-shrink: 0;
+  opacity:    0.6;
+}
+.more-icon:hover { opacity: 1; }
+
+/* ─────────────────────────────────
+   CENTER PANEL
+───────────────────────────────── */
+.center-panel {
+  overflow-y:     auto;
+  display:        flex;
+  flex-direction: column;
+  gap: var(--gap);
+  min-height:  0;
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+//background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: var(--border-radius);
+padding: 24px;
+opacity: 1;
+}
+
+
+// ── Chart Card ──
+
+.chart-card {
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: var(--card-shadow);
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 726px;
+  opacity: 1;
+  
+}
+
+.chart-card > h2 {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size: var(--unnamed-font-size-24);
+  font-weight: var(--unnamed-font-weight-800);
+  color: var(--unnamed-color-072635);
+  margin-bottom: 16px;
+}
+
+.chart {
+ background: #F4F0FE 0% 0% no-repeat padding-box;
+border-radius: 12px;
+padding: 16px;
+}
+
+.chart-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.chart-top h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--unnamed-color-072635);
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 220px;
+  background: #F4F0FE;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.chart-wrapper canvas {
+  width: 100% !important;
+}
+#month-filter {
+  font-family:    var(--unnamed-font-family-manrope);
+  font-size:      var(--unnamed-font-size-14);
+  font-weight:    var(--unnamed-font-weight-bold);
+  color:          var(--unnamed-color-072635);
+  border:         1px solid var(--unnamed-color-ededed);
+  border-radius:  50px;
+  padding:        6px 16px;
+  background:     var(--unnamed-color-ffffff);
+  cursor:         pointer;
+  align-items:     center;
+  align-items: center;
+
+}
+
+/* Chart area — canvas LEFT, values RIGHT */
+.chart-area {
+  display:     flex;
+  align-items: stretch;
+  //overflow:    hidden;
+  gap: 20px;
+}
+
+.chart-area canvas {
+  flex:       1;
+  min-width:  0;
+  max-width:  calc(100% - 180px);
+  height:     220px !important; 
+  
+  
+}
+
+/* Vertical line between chart and bp values */
+.bp-divider {
+  width:      1px;
+  background: var(--unnamed-color-ededed);
+   margin:     0 20px;
+  flex-shrink: 0;
+  align-self: stretch; 
+}
+
+/* BP values — fixed right side */
+.bp-values {
+  width:          140px;
+  flex-shrink:    0;
+  display:        flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:            16px;
+}
+
+.bp-item {
+  display:        flex;
+  flex-direction: column;
+  gap:            4px;
+}
+
+/* Dot + label row */
+.bp-dot-row {
+  display:     flex;
+  align-items: center;
+  gap:         8px;
+  margin-bottom: 4px;
+}
+
+.bp-dot {
+  width:         12px;
+  height:        12px;
+  border-radius: 50%;
+  flex-shrink:   0;
+}
+
+.systolic-dot  { background: var(--unnamed-color-ff6200); }
+.diastolic-dot { background: var(--unnamed-color-705aaa); }
+
+.bp-label {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size:   var(--unnamed-font-size-14);
+  font-weight: var(--unnamed-font-weight-bold);
+  color:       var(--unnamed-color-072635);
+}
+
+.bp-item h2 {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size:   22px;
+  font-weight: var(--unnamed-font-weight-800);
+  color:       var(--unnamed-color-072635);
+  line-height: 1.2;
+}
+
+.bp-item p {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size:   12px;
+  font-weight: var(--unnamed-font-weight-normal);
+  color:       var(--unnamed-color-707070);
+  line-height: 1.4;
+}
+
+/* Horizontal divider between systolic & diastolic */
+.divider {
+  border-top: 3px solid var(--unnamed-color-ededed);
+  width:      100%;
+  opacity:    100%;
+}
+
+#sys-level,
+#dia-level {
+  display: flex;
+  align-items: center;
+  gap: 6px;          /* space between arrow and text */
+}
+.bp-arrow {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+.bp-dot-row {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+ }        /* space between dot and label */
+ 
+/* ── Vitals Row ── */
+.vitals-row {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   var(--gap);
+  flex-shrink:           0;
+}
+
+.vital-card {
+  border-radius:  var(--border-radius);
+  padding:        20px;
+  box-shadow:     var(--card-shadow);
+  display:        flex;
+  flex-direction: column;
+  gap:            8px;
+}
+
+#card-heartrate   { background: #FFE6F1; }
+#card-temperature { background: #FFF8E6; }
+#card-respiratory { background: #E6F9F7; }
+
+.vital-card img {
+  width:      48px;
+  height:     48px;
+  object-fit: contain;
+}
+
+.vital-label {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size:   var(--unnamed-font-size-14);
+  font-weight: var(--unnamed-font-weight-normal);
+  color:       var(--unnamed-color-707070);
+  line-height: var(--unnamed-line-spacing-19);
+}
+
+.vital-value {
+  font-family:  var(--unnamed-font-family-manrope);
+  font-size:    var(--unnamed-font-size-24);
+  font-weight:  var(--unnamed-font-weight-800);
+  color:        var(--unnamed-color-072635);
+  line-height:  var(--unnamed-line-spacing-33);
+  display:      flex;
+  align-items:  baseline;
+  gap:          4px;
+}
+
+.vital-unit {
+  font-size:   var(--unnamed-font-size-14);
+  font-weight: var(--unnamed-font-weight-normal);
+  color:       var(--unnamed-color-707070);
+}
+
+.vital-level {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size:   13px;
+  font-weight: var(--unnamed-font-weight-normal);
+  color:       var(--unnamed-color-707070);
+}
+
+
+/* ── Diagnostic Card ── */
+.diagnostic-card {
+  background:    var(--unnamed-color-ffffff);
+  border-radius: var(--border-radius);
+  padding:       24px;
+  box-shadow:    var(--card-shadow);
+  flex-shrink:   0;
+}
+
+.diagnostic-card h3 {
+  font-family:   var(--unnamed-font-family-manrope);
+  font-size:     var(--unnamed-font-size-24);
+  font-weight:   var(--unnamed-font-weight-800);
+  line-height:   var(--unnamed-line-spacing-33);
+  color:         var(--unnamed-color-072635);
+  margin-bottom: 16px;
+}
+
+.diagnostic-table {
+  width:           100%;
+  border-collapse: collapse;
+}
+
+.diagnostic-table th {
+  text-align:    left;
+  font-family:   var(--unnamed-font-family-manrope);
+  font-size:     var(--unnamed-font-size-14);
+  font-weight:   var(--unnamed-font-weight-bold);
+  color:         var(--unnamed-color-072635);
+  padding:       10px 16px;
+  background:    var(--unnamed-color-f6f6f6);
+  border-bottom: 2px solid var(--unnamed-color-ededed);
+}
+
+.diagnostic-table td {
+  padding:       14px 16px;
+  font-family:   var(--unnamed-font-family-manrope);
+  font-size:     var(--unnamed-font-size-14);
+  font-weight:   var(--unnamed-font-weight-normal);
+  color:         var(--unnamed-color-072635);
+  border-bottom: 1px solid var(--unnamed-color-ededed);
+  vertical-align: middle;
+}
+
+.diagnostic-table tr:last-child td {
+  border-bottom: none;
+}
+
+.diagnostic-table tr:hover td {
+  background: var(--unnamed-color-f6f6f6);
+}
+
+.status-badge {
+  display:       inline-block;
+  padding:       4px 12px;
+  border-radius: 50px;
+  font-family:   var(--unnamed-font-family-manrope);
+  font-size:     12px;
+  font-weight:   var(--unnamed-font-weight-bold);
+  background:    var(--unnamed-color-f6f6f6);
+  color:         var(--unnamed-color-072635);
+  white-space:   nowrap;
+}
+
+
+/* ─────────────────────────────────
+   RIGHT PANEL
+───────────────────────────────── */
+.right-panel {
+  background:     var(--unnamed-color-ffffff);
+  border-radius:  var(--border-radius);
+  box-shadow:     var(--card-shadow);
+  overflow-y:     auto;
+  padding:        24px 20px;
+  display:        flex;
+  flex-direction: column;
+  gap:            20px;
+  min-height:     0;
+}
+
+/* Profile */
+.profile-card {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  gap:             12px;
+  text-align:      center;
+  padding-bottom:  20px;
+  border-bottom:   1px solid var(--unnamed-color-ededed);
+}
+
+#profile-img {
+  width:         200px;
+  height:        200px;
+  border-radius: 50%;
+  object-fit:    cover;
+}
+
+#profile-name {
+  font-family:  var(--unnamed-font-family-manrope);
+  font-size:    var(--unnamed-font-size-24);
+  font-weight:  var(--unnamed-font-weight-800);
+  line-height:  var(--unnamed-line-spacing-33);
+  color:        var(--unnamed-color-072635);
+}
+
+/* Info Rows */
+.patient-info {
+  display:        flex;
+  flex-direction: column;
+}
+
+.info-row {
+  display:       flex;
+  align-items:   center;
+  gap:           12px;
+  padding:       12px 0;
+  border-bottom: 1px solid var(--unnamed-color-ededed);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-icon {
+  width:           36px;
+  height:          36px;
+  border-radius:   50%;
+  background:      var(--unnamed-color-f6f6f6);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+}
+
+.info-icon img {
+  width:  18px;
+  height: 18px;
+}
+
+.info-label {
+  font-family:   var(--unnamed-font-family-manrope);
+  font-size:     12px;
+  font-weight:   var(--unnamed-font-weight-normal);
+  color:         var(--unnamed-color-707070);
+  margin-bottom: 2px;
+  line-height:   var(--unnamed-line-spacing-19);
+}
+
+.info-value {
+  font-family: var(--unnamed-font-family-manrope);
+  font-size:   var(--unnamed-font-size-14);
+  font-weight: var(--unnamed-font-weight-bold);
+  color:       var(--unnamed-color-072635);
+  line-height: var(--unnamed-line-spacing-19);
+}
+
+/* Show All Button */
+.show-all {
+  width:         100%;
+  padding:       13px;
+  border:        1.5px solid var(--unnamed-color-cbc8d4);
+  border-radius: 50px;
+  background:    transparent;
+  font-family:   var(--unnamed-font-family-manrope);
+  font-size:     var(--unnamed-font-size-14);
+  font-weight:   var(--unnamed-font-weight-bold);
+  color:         var(--unnamed-color-072635);
+  cursor:        pointer;
+  transition:    background 0.2s;
+  text-align:    center;
+  top: 775px;
+left: 1289px;
+width: 220px;
+height: 41px;
+/* UI Properties */
+background: var(--activestate_bg_1) 0% 0% no-repeat padding-box;
+background: #01F0D0 0% 0% no-repeat padding-box;
+border-radius: 41px;
+opacity: 1;
+}
+
+.show-all:hover {
+  background: var(--unnamed-color-f6f6f6);
+}
+
+/* Lab Results */
+.lab-section h3 {
+  font-family:   var(--unnamed-font-family-manrope);
+  font-size:     var(--unnamed-font-size-18);
+  font-weight:   var(--unnamed-font-weight-bold);
+  line-height:   var(--unnamed-line-spacing-24);
+  color:         var(--unnamed-color-072635);
+  margin-top:    12px;
+  margin-bottom: 12px;
+}
+
+#lab-list {
+  list-style:     none;
+  display:        flex;
+  flex-direction: column;
+  gap:            8px;
+}
+
+.lab-item {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         12px 16px;
+  background:      var(--unnamed-color-f6f6f6);
+  border-radius:   8px;
+  font-family:     var(--unnamed-font-family-manrope);
+  font-size:       var(--unnamed-font-size-14);
+  font-weight:     var(--unnamed-font-weight-bold);
+  color:           var(--unnamed-color-072635);
+  cursor:          pointer;
+  transition:      background 0.15s;
+}
+
+.lab-item:hover {
+  background: var(--unnamed-color-ededed);
+}
+
+.download-icon {
+  font-size:   16px;
+  color:       var(--unnamed-color-707070);
+  flex-shrink: 0;
+}
+
+
+/* ─────────────────────────────────
+   SCROLLBAR
+───────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background:    var(--unnamed-color-cbc8d4);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--unnamed-color-707070);
 }
